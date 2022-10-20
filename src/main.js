@@ -9,6 +9,7 @@ function setCardType(type) {
   const colors = {
     visa: ["#2D57F2", "#436D99"],
     mastercard: ["#C69347", "#DF6F29"],
+    express: ["#9DB53C", "#E8BE31"],
     default: ["black", "gray"],
   }
 
@@ -60,6 +61,11 @@ const cardNumberPattern = {
       mask: "0000 0000 0000 0000",
       regex: /(^5[1-5]\d{0,2}|^22[2-9]\d{0,1}|^2[3-7]\d{0,2})\d{0,12}/,
       cardType: "mastercard"
+    },
+    {
+        mask: '0000 000000 00000',
+        regex: /^3[47]\d{0,13}/,
+        cardType: 'express'
     },
     {
       mask: "0000 0000 0000 0000",
